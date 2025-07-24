@@ -21,7 +21,3 @@ El método sigue una lógica iterativa:
   - Estos cortes son simplificaciones, no cortes Gomory formales.
 - **Convergencia**:
   - El proceso se repite hasta que se encuentra una solución entera o se determina que no existe ninguna viable.
-
----
-
-Puedes seguir extendiendo el README con secciones como `Instalación`, `Ejemplos`, o `Licencia` si lo vas a publicar. ¿Quieres ayuda para completar esas secciones también?
