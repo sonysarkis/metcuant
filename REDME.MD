@@ -1,16 +1,27 @@
-Este programa Python, diseñado con Programación Orientada a Objetos (POO), resuelve problemas de Programación Lineal utilizando una simulación del método de planos de corte.
+## 📘 Descripción del Funcionamiento del Programa
 
-Modelo LP (Clase LinearProgrammingModel): Permite al usuario definir interactivamente las variables de decisión, la función objetivo (maximizar/minimizar) y las restricciones del problema de programación lineal. Internamente, utiliza la librería pulp para construir el modelo.
+Este programa en Python, diseñado con **Programación Orientada a Objetos (POO)**, resuelve problemas de **Programación Lineal** mediante una simulación del **método de planos de corte**.
 
+### 🧩 Modelo LP (`LinearProgrammingModel`)
+Permite al usuario definir interactivamente:
+- Variables de decisión
+- Función objetivo: *maximizar* o *minimizar*
+- Restricciones del problema
 
-Método de Planos de Corte Simplificado (solve_model_with_cutting_planes()):
+Internamente, el modelo utiliza la librería `pulp` para construir y resolver el sistema.
 
-Iterativo: Resuelve el problema como una Programación Lineal Continua en cada paso.
+### ✂️ Método de Planos de Corte Simplificado (`solve_model_with_cutting_planes()`)
 
-Verificación: Comprueba si la solución actual tiene valores enteros para todas las variables.
+El método sigue una lógica iterativa:
 
-"Cortes" Heurísticos: Si la solución no es entera, añade una nueva restricción ("corte") que elimina el punto fraccionario actual de la región factible (por ejemplo, si una variable es 2.5, añade x <= 2). Este es un corte simplificado, no un corte de Gomory riguroso.
+- **Iterativo**: Resuelve el modelo como una programación lineal continua en cada paso.
+- **Verificación**: Comprueba si todas las variables tienen valores enteros.
+- **Cortes heurísticos**:
+  - Si alguna variable no es entera (ej. 2.5), se agrega una restricción tipo `x <= 2`.
+  - Estos cortes son simplificaciones, no cortes Gomory formales.
+- **Convergencia**:
+  - El proceso se repite hasta que se encuentra una solución entera o se determina que no existe ninguna viable.
 
-Convergencia: El proceso se repite hasta encontrar una solución entera o determinar que no hay una.
+---
 
-El programa ofrece un menú interactivo en consola para que el usuario ingrese todos los datos del modelo paso a paso y observe la resolución.
+Puedes seguir extendiendo el README con secciones como `Instalación`, `Ejemplos`, o `Licencia` si lo vas a publicar. ¿Quieres ayuda para completar esas secciones también?
